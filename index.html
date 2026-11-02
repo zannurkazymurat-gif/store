@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STYLE — Магазин одежды</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f8f6f2;
+    color: #222;
+}
+
+header {
+    background: #171717;
+    color: white;
+    padding: 22px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 12px;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #c6a77d;
+}
+
+.hero {
+    min-height: 500px;
+    background: linear-gradient(90deg, #171717, #51463c);
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 70px 10%;
+}
+
+.hero-content {
+    max-width: 550px;
+}
+
+.hero h1 {
+    font-size: 55px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    background: #c6a77d;
+    color: #171717;
+    padding: 15px 30px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+section {
+    padding: 70px 8%;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 34px;
+    margin-bottom: 15px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #777;
+    margin-bottom: 40px;
+}
+
+.about {
+    text-align: center;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: auto;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.product {
+    background: white;
+    padding-bottom: 20px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.product:hover {
+    transform: translateY(-7px);
+}
+
+.product img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.product h3 {
+    margin: 18px 0 10px;
+}
+
+.price {
+    color: #a17c50;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.product button {
+    background: #171717;
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    cursor: pointer;
+}
+
+.product button:hover {
+    background: #a17c50;
+}
+
+.cart {
+    text-align: center;
+    background: #eee8df;
+}
+
+.cart p {
+    margin: 15px;
+    font-size: 18px;
+}
+
+.contact {
+    text-align: center;
+    line-height: 2;
+}
+
+footer {
+    background: #171717;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+@media(max-width: 800px) {
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    nav {
+        line-height: 2;
+    }
+}
+
+@media(max-width: 500px) {
+    .products {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        justify-content: center;
+    }
+
+    .hero {
+        min-height: 400px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">STYLE.</div>
+    <nav>
+        <a href="#home">Главная</a>
+        <a href="#about">О нас</a>
+        <a href="#catalog">Каталог</a>
+        <a href="#cart">Корзина</a>
+        <a href="#contact">Контакты</a>
+    </nav>
+</header>
+
+<div class="hero" id="home">
+    <div class="hero-content">
+        <h1>ТВОЙ СТИЛЬ — ТВОИ ПРАВИЛА</h1>
+        <p>
+            Открой для себя новую коллекцию одежды.
+            Современный дизайн, качество и комфорт
+            в каждой детали.
+        </p>
+        <a href="#catalog" class="btn">Смотреть коллекцию</a>
+    </div>
+</div>
+
+<section id="about">
+    <h2 class="section-title">О НАШЕМ МАГАЗИНЕ</h2>
+    <p class="subtitle">Добро пожаловать в STYLE</p>
+
+    <div class="about">
+        <p>
+            STYLE — современный магазин одежды для тех,
+            кто любит моду и индивидуальность.
+            У нас вы найдёте стильную одежду на каждый день,
+            качественные материалы и актуальные модели.
+            Мы помогаем каждому создать свой неповторимый образ.
+        </p>
+    </div>
+</section>
+
+<section id="catalog">
+    <h2 class="section-title">НАША КОЛЛЕКЦИЯ</h2>
+    <p class="subtitle">Выбери свой стиль</p>
+
+    <div class="products">
+
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600" alt="Куртка">
+            <h3>Стильная куртка</h3>
+            <p class="price">25 000 ₸</p>
+            <button onclick="addToCart('Стильная куртка',25000)">
+                В корзину
+            </button>
+        </div>
+
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?w=600" alt="Джинсы">
+            <h3>Классические джинсы</h3>
+            <p class="price">15 000 ₸</p>
+            <button onclick="addToCart('Классические джинсы',15000)">
+                В корзину
+            </button>
+        </div>
+
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600" alt="Футболка">
+            <h3>Базовая футболка</h3>
+            <p class="price">8 000 ₸</p>
+            <button onclick="addToCart('Базовая футболка',8000)">
+                В корзину
+            </button>
+        </div>
+
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1544441893-675973e31985?w=600" alt="Свитер">
+            <h3>Модный свитер</h3>
+            <p class="price">18 000 ₸</p>
+            <button onclick="addToCart('Модный свитер',18000)">
+                В корзину
+            </button>
+        </div>
+
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=600" alt="Сумка">
+            <h3>Женская сумка</h3>
+            <p class="price">20 000 ₸</p>
+            <button onclick="addToCart('Женская сумка',20000)">
+                В корзину
+            </button>
+        </div>
+
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600" alt="Кроссовки">
+            <h3>Кроссовки</h3>
+            <p class="price">22 000 ₸</p>
+            <button onclick="addToCart('Кроссовки',22000)">
+                В корзину
+            </button>
+        </div>
+
+    </div>
+</section>
+
+<section class="cart" id="cart">
+    <h2 class="section-title">МОЯ КОРЗИНА</h2>
+    <div id="cartItems">
+        <p>Корзина пока пуста</p>
+    </div>
+    <h3 id="total">Итого: 0 ₸</h3>
+</section>
+
+<section id="contact" class="contact">
+    <h2 class="section-title">КОНТАКТЫ</h2>
+    <p>📍 г. Семей</p>
+    <p>📞 +7 777 000 00 00</p>
+    <p>✉ style@mail.com</p>
+    <p>Instagram: @style_shop</p>
+</section>
+
+<footer>
+    <p>© 2026 STYLE. Магазин одежды. Все права защищены.</p>
+</footer>
+
+<script>
+let cart = [];
+
+function addToCart(name, price) {
+    cart.push({name, price});
+    showCart();
+}
+
+function showCart() {
+    let items = document.getElementById("cartItems");
+    let total = document.getElementById("total");
+
+    items.innerHTML = "";
+
+    let sum = 0;
+
+    cart.forEach((item, index) => {
+        sum += item.price;
+
+        items.innerHTML += `
+            <p>
+                ${item.name} — ${item.price.toLocaleString("ru-RU")} ₸
+                <button onclick="removeItem(${index})">Удалить</button>
+            </p>
+        `;
+    });
+
+    if (cart.length === 0) {
+        items.innerHTML = "<p>Корзина пока пуста</p>";
+    }
+
+    total.innerText = "Итого: " + sum.toLocaleString("ru-RU") + " ₸";
+}
+
+function removeItem(index) {
+    cart.splice(index, 1);
+    showCart();
+}
+</script>
+
+</body>
+</html>
